@@ -167,11 +167,11 @@ body .site-tips p{margin: 0;}
     // 每日第一次打开时 强制弹窗
     $(function(){
          if (document.cookie.match(new RegExp('(^| )PCA=([^;]*)(;|$)'))) {
-            $('.cover,.alert_welcome').hide();
+            $('.cover,.alert_welcome').show();
         } else {
             $('.cover,.alert_welcome').show();
             var exp = new Date(); //获得当前时间
-            exp.setTime(exp.getTime() + 1000); //换成毫秒 
+            exp.setTime(exp.getTime() + 24 * 60 * 60 * 1000); //换成毫秒
             document.cookie = 'PCA=exist;expires=' + exp.toGMTString();
             console.log(exp);
         }
